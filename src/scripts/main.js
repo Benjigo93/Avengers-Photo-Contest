@@ -1,3 +1,3 @@
-import Test from 'components/Test.js'
+import Parallax from './components/Parallax'
 
-const test = new Test()
+const parallax = new Parallax()

@@ -213,7 +213,7 @@ gulp.task('views', () =>
 			`${path.src.views}*.php`,
 			`${path.src.views}**/*.php`,
 			`${path.src.views}**/**/*.php`,
-			`${path.src.views}**/**/**/*.php`
+			`${path.src.views}**/**/**/*.php`,
 			`${path.src.views}**/**/**/**/*.php`
 		])
 		.pipe(gulpPlumber(
@@ -312,7 +312,7 @@ gulp.task('watch', () =>
 			`${path.src.views}*.*`,
 			`${path.src.views}**/*.*`,
 			`${path.src.views}**/**/*.*`,
-			`${path.src.views}**/**/**/*.*`
+			`${path.src.views}**/**/**/*.*`,
 			`${path.src.views}**/**/**/**/*.*`
 		], ['views'])
 		.on('change', browserSync.reload)
