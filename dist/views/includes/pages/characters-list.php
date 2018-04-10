@@ -34,7 +34,7 @@ for($i = 0; $i<count($heroesId); $i++){
     <title>Characters</title>
 </head>
 <body>
-    <div id="charList">
+    <div id="char-list">
         <?php for($i = 0; $i<count($heroesId); $i++){ ?>
         <a href="hero.php?shId=<?=$heroesId[$i]?>">
         <div style="background-image:url(../../../assets/images/sheroe<?= $heroesId[$i] ?>.jpg);">

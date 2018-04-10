@@ -34,7 +34,7 @@ if(isset($_GET['shId'])) {
     <title>Characters</title>
 </head>
 <body>
-    <div id="desc-hero"></div>
+    <div id="desc-hero">
         <h1><?= $heroData->name; ?></h1>
         <img src="../../../assets/images/sheroe<?= $id ?>.jpg" class="picture">
         <div class="infos">
