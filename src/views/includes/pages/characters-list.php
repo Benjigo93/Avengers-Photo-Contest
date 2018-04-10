@@ -9,7 +9,7 @@ for($i = 0; $i<count($heroesId); $i++){
 
     $path = "../../cache/superheroes/".md5($apiUrl);
 
-    if(file_exists($path) && time() - filemtime($path) < 1280){
+    if(file_exists($path) && time() - filemtime($path) < 86400){
         $data[$i] = file_get_contents($path);
         $data[$i] = json_decode($data[$i]);
     } else {
@@ -34,13 +34,15 @@ for($i = 0; $i<count($heroesId); $i++){
     <title>Characters</title>
 </head>
 <body>
-    <?php for($i = 0; $i<count($heroesId); $i++){ ?>
-    <a href="#">
-    <div style="background-image:url(../../../assets/images/sheroe<?= $heroesId[$i] ?>.jpg);">
-        <h2> <?= $data[$i]->name ?></h2>
-        <?php if(!$data[$i]->biography->{'full-name'}==null){?> <span> <?= $data[$i]->biography->{'full-name'} ?></span> <?php }?>
+    <div id="charList">
+        <?php for($i = 0; $i<count($heroesId); $i++){ ?>
+        <a href="hero.php?hero=<?=$heroesId[$i]?>">
+        <div style="background-image:url(../../../assets/images/sheroe<?= $heroesId[$i] ?>.jpg);">
+            <h2> <?= $data[$i]->name ?></h2>
+            <?php if(!$data[$i]->biography->{'full-name'}==null){?> <span> <?= $data[$i]->biography->{'full-name'} ?></span> <?php }?>
+        </div>
+        </a>
+        <?php }?>
     </div>
-    </a>
-    <?php }?>
 </body>
 </html>
