@@ -5,7 +5,7 @@ if(isset($_GET['shId'])) {
     $apiKey = '1741355745903622';
     $apiUrl = 'http://www.superheroapi.com/api/'.$apiKey.'/'.$id;
     
-    $path = '../../cache/superheroes'.md5($apiUrl);
+    $path = '../../cache/superheroes/'.md5($apiUrl);
 
     if(file_exists($path) && time() - filemtime($path) < 86400)
     {
