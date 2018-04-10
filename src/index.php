@@ -2,7 +2,7 @@
 
 // Requires
 require 'views/includes/settings/errors.php';
-require 'views/includes/settings/config.php';
+//require 'views/includes/settings/config.php';
 
 // Auto load classes
 require 'views/includes/partials/components/Autoloader.php';
@@ -19,7 +19,6 @@ Autoloader::register();
         <title></title>
         <!-- CSS -->
         <link rel="stylesheet" type="text/css"href="styles/reset.css">
-        <link rel="stylesheet" type="text/css"href="styles/foundation.css">
         <link rel="stylesheet" type="text/css"href="styles/main.css">
         <!-- JS -->
         <script src="scripts/modernizr.js"></script>
@@ -27,7 +26,8 @@ Autoloader::register();
 
     <body>
 
-
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magni consectetur odio nulla illo ullam asperiores culpa deserunt expedita, maiores non provident fuga blanditiis esse labore facere eveniet temporibus? Ratione?</div>
+        <h1>YOOOOO</h1>
 
         <!-- JS -->
         <script src="scripts/main.js"></script>

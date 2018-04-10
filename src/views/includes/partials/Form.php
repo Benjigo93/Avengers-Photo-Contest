@@ -6,4 +6,9 @@ class Form
     {
         
     }
+
+    public function text($defaultText)
+    {
+        echo '<input type="text" placeholder="'.$defaultText.'">' ;
+    }
 }
