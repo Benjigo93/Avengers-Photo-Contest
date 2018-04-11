@@ -1,21 +1,66 @@
 html
     body
         #char-list
-            position relative
-            display flex
-            flex-wrap wrap
-            align-content: center
-            a
-                margin 2px
-                div
+            background #000000
+            color #ffffff
+            .container
+                position relative
+                display flex
+                flex-wrap wrap
+                align-content center
+                width 84vw
+                margin-left calc(50% - 39vw)
+                font-family sans-serif
+                color #000000
+                .title
+                    display block
+                    margin 0 25vw
+                    text-align center
+                    text-transform uppercase
+                    color red
+                    h1
+                        font-style italic
+                a
                     margin 2px
-                    width 19vw
-                    height 30vh
-                    background-size cover
-                    color: white
-                &:nth-child(18)
+                    text-decoration none
                     div
-                        background-position: 15% 86% 
+                        position relative
+                        margin 2px
+                        width 19vw
+                        height 30vh
+                        background-size cover
+                        color white
+                        .text-container
+                            margin-left 0
+                        h2 
+                            color red
+                            text-transform uppercase
+                            opacity 0
+                            transition opacity 0.2s ease-out
+                            margin 3px
+                        span 
+                            opacity 0
+                            transition opacity 0.2s ease-out
+                            margin 0 3px
+                            font-size 14px
+                        .more
+                            position absolute
+                            bottom 2vw
+                            margin-left 5vw
+                            font-weight bold
+                            font-size 12px
+                    div:hover 
+                        background-color rgba(0, 0, 0, 0.5)
+                        transition background-color 0.2s ease-out
+                    div:hover span
+                        opacity 1
+                        transition opacity 0.5s ease-out
+                    div:hover h2
+                        opacity 1
+                        transition opacity 0.5s ease-out
+                    &:nth-child(18)
+                        div
+                            background-position 15% 86% 
 
 @import 'partials/header.styl'
 @import 'partials/footer.styl'
