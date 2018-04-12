@@ -20,6 +20,10 @@ for($i = 0; $i<count($heroesId); $i++){
 
 }
 
+    //echo '<pre>';
+    //print_r($data[2]->biography->{'full-name'});
+    //echo '</pre>';
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,8 +62,6 @@ for($i = 0; $i<count($heroesId); $i++){
             </a>
             <?php }?>
         </div>
-        </a>
-        <?php }?>
     </div>
 </body>
 </html>
