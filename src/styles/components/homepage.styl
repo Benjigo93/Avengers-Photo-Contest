@@ -1,0 +1,85 @@
+html
+    body
+        font-family: 'gotham'
+        background: #222222
+        width: 100vw
+        color: rgb(255, 255, 255)
+        #homepage
+            .header
+                background-image: url('../assets/images/avengers-infinity-war.jpg');
+                background-size: 100%;
+                background-repeat: no-repeat;
+            a
+                text-decoration: none       
+
+            ul li
+                display: table-cell
+                vertical-align: middle
+
+            .videoPlayerButton
+                margin: 15vw auto
+                width: 20%
+                text-align: center    
+
+                .fa-play-circle 
+                    font-size: 70px
+                    transition: opacity 0.5s
+
+                .fa-play-circle:hover
+                    opacity: 0.1
+                    will-change: transform
+
+            .container 
+                padding: 0 160px
+
+            .container.index-1
+                margin-bottom: 50px
+
+            .container.index-2
+                background: #2e2e2e
+
+            .title
+                font-family: "UniHeavyItalic"
+                font-size: 2em
+                position: relative
+                padding: 50px 0
+
+                .filet
+                    background: #E23636
+                    width: 150px
+                    height: 3px
+                    position: absolute
+                    top: 80%
+                    left: 0%
+
+            .contestText
+                width: 45vw
+                display: inline-block
+                font-weight: 100    
+                line-height: 150%
+
+            .avengersImg
+                width: 25vw
+                height: 25vh
+                margin: 7% auto
+                background-image: url('../assets/images/avengers.png')
+                background-size: cover
+                display: inline-block
+    
+            .participationButton
+            	background-color:#E23636
+            	border:1px solid #ad2727
+            	display:inline-block
+            	cursor:pointer
+            	color:#ffffff
+            	font-size:15px
+            	font-weight:bold
+            	padding:9px 23px
+                text-shadow:0px -1px 0px #7a2a1d
+                margin: 5% 0
+            
+            .participationButton:hover
+                background: #ad2727
+
+@import 'partials/header.styl'
+@import 'partials/footer.styl'

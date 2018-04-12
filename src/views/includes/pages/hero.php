@@ -1,26 +1,27 @@
 <?php
 
-if(isset($_GET['shId'])) {
-    $id = $_GET['shId'];
-    $apiKey = '1741355745903622';
-    $apiUrl = 'http://www.superheroapi.com/api/'.$apiKey.'/'.$id;
-    
-    $path = '../../cache/superheroes/'.md5($apiUrl);
+    require '../settings/config.php';
 
-    if(file_exists($path) && time() - filemtime($path) < 86400)
-    {
-        $heroData = json_decode(file_get_contents($path));
-    }
-    else
-    {
-        $heroData = json_decode(file_get_contents($apiUrl));
-        file_put_contents($path, json_encode($heroData));
-    }
-}
+    $get_img = $pdo->query('SELECT id_hero_1,id_hero_2,id_hero_3,id_hero_4,id_hero_5,character_number,url_hero_1,url_hero_2,url_hero_3,url_hero_4,url_hero_5,votes,validated FROM rankings WHERE validated = 1 ORDER BY votes DESC ');
+    $get_images = $get_img->fetchAll();
 
-    // echo '<pre>';
-    // var_dump($heroData);
-    // echo '</pre>';
+    if(isset($_GET['shId'])) {
+        $id = $_GET['shId'];
+        $apiKey = '1741355745903622';
+        $apiUrl = 'http://www.superheroapi.com/api/'.$apiKey.'/'.$id;
+
+        $path = '../../cache/superheroes/'.md5($apiUrl);
+
+        if(file_exists($path) && time() - filemtime($path) < 86400)
+        {
+            $heroData = json_decode(file_get_contents($path));
+        }
+        else
+        {
+            $heroData = json_decode(file_get_contents($apiUrl));
+            file_put_contents($path, json_encode($heroData));
+        }
+    }
 
 ?>
 
@@ -52,6 +53,16 @@ if(isset($_GET['shId'])) {
             </div>
         </div>
         <div class="part-2">
+            <?php 
+                foreach ($get_images as $image){
+                    for($a=1; $a <= $image->character_number; $a++){	
+                        if($image->{'id_hero_'.$a} == $id){
+                            $url_temp = $image->{'url_hero_'.$a};
+                            ?><img src="<?= $url_temp ?>" style="height:200px;" alt=""><?php
+                        }
+                    }
+                }
+            ?>
         </div>
     </div>
 

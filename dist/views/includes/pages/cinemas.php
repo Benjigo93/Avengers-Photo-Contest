@@ -39,30 +39,31 @@ else{
 	$locationError = true;
 }
 
-?>
-
-	<!DOCTYPE html>
+?><!DOCTYPE html>
 	<html lang="en">
 
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="../../../styles/main.css">
 		<title>Cinemas</title>
 	</head>
 
 	<body>
-		<?php  
-		if($locationError){
-			echo '<div class="errorMessage">Please accept the geolocation to see the list of cinemas</div>';
-		}
-		else{
-			include 'cinema-list.php';
-		}	
-		?>
-		<header>
+		<header class="header">
 			<button class="cinemas">Liste des cinémas</button>
 		</header>
+		<div class="cinemas-container">
+			<?php
+			if($locationError){
+				echo '<div class="errorMessage">Please accept the geolocation to see the list of cinemas</div>';
+			}
+			else{
+				include '../settings/cinema-list.php';
+			}
+			?>
+		</div>
 		<script src="../../../scripts/cinema.js"></script>
 	</body>
 	</html>
