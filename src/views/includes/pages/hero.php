@@ -18,6 +18,10 @@ if(isset($_GET['shId'])) {
     }
 }
 
+    // echo '<pre>';
+    // var_dump($heroData);
+    // echo '</pre>';
+
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +56,5 @@ if(isset($_GET['shId'])) {
     </div>
 
     <script src="../../../scripts/hero.js"></script>
-
 </body>
 </html>
