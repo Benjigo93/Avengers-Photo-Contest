@@ -1,3 +1,11 @@
-import Parallax from './components/Parallax'
+const $test = document.querySelectorAll('.click')
+const $test2 = document.querySelectorAll('.yes')
 
-const parallax = new Parallax()
+for(let $i=0; $i<$test.length; $i++){
+    $test[$i].addEventListener('click',()=>{
+        $test2[$i].select()
+        document.execCommand("Copy");
+    })
+}
+
+
