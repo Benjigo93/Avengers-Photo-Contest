@@ -18,10 +18,6 @@ if(isset($_GET['shId'])) {
     }
 }
 
-    // echo '<pre>';
-    // var_dump($heroData);
-    // echo '</pre>';
-
 ?>
 
 <!DOCTYPE html>
