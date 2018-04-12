@@ -8,8 +8,8 @@
     <title>Already Voted</title>
 </head>
 <body>
-    <div>
-        <h3>You Have Already Voted Today !!</h3>
+    <div id="already-voted">
+        <h3>You have already voted today !</h3>
         <a href="../ranking.php"> Go Back </a>
     </div>
 </body>
