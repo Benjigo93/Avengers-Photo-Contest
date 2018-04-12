@@ -26,7 +26,7 @@ Autoloader::register();
 
     <body>
 
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magni consectetur odio nulla illo ullam asperiores culpa deserunt expedita, maiores non provident fuga blanditiis esse labore facere eveniet temporibus? Ratione?</div>
+        <div>Lorem ipsum dolor sit Vitae magni consectetur odio nulla illo ullam asperiores culpa deserunt expedita, maiores non provident fuga blanditiis esse labore facere eveniet temporibus? Ratione?</div>
         <h1>YOOOOO</h1>
 
         <!-- JS -->
