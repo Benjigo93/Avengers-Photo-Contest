@@ -60,7 +60,6 @@
                     <div class="heroePic" style="background-image:url(../../../assets/<?= $get_ranking[$i]->{'url_hero_'.$j} ?>.jpg);"></div>
                     <?php } ?>  
                 </div>
-            <?php } ?>
             </div>
             <?php } ?>
         <?php } ?>
