@@ -1,12 +1,13 @@
 html
     body
+        font-size 20px
         #char-list
             background #000000
             color #ffffff
             .container
                 position relative
-                display flex
-                flex-wrap wrap
+                // display flex
+                // flex-wrap wrap
                 align-content center
                 width 84vw
                 margin-left calc(50% - 39vw)
@@ -14,42 +15,89 @@ html
                 color #000000
                 .title
                     display block
-                    margin 0 25vw
+                    width 100%
                     text-align center
+                    margin 0 auto 0 auto
                     text-transform uppercase
                     color red
                     h1
-                        font-style italic
+                        font-family UniHeavyItalic
+                        font-size 60px
+                        color #dfdfdf
+                        margin 25px 0 0 0
+                    .line
+                        margin 0 auto 0 auto
+                        width 36vw
+                        height 4px
+                        background #E51111
+                    p
+                        font-family GothamBold
+                        font-size 20px
+                        color #dfdfdf
+                        margin-bottom 6vh
+                    // .search-container
+                    //     margin-bottom 3vw
+                    //     input[type=text]
+                    //         width 300px
+                    //         padding 6px
+                    //         margin-top 8px
+                    //         font-size 17px
+                    //         border none
+                    //     button
+                    //         padding 6px 10px
+                    //         font-size 17px
+                    //         border none
+                    //         cursor pointer
                 a
-                    margin 2px
+                    display inline-block
+                    position relative
+                    margin-left 15px
+                    margin-bottom 15px
+                    transform skew(-20deg, 0deg)
+                    border solid 2px #dfdfdf
+                    width 19vw
+                    height 30vh
+                    overflow hidden
                     text-decoration none
                     div
-                        position relative
-                        margin 2px
-                        width 19vw
+                        position absolute
+                        margin 0px
+                        left -3vw
+                        width 25vw
                         height 30vh
                         background-size cover
                         color white
+                        transform skew(20deg, 0deg)
                         .text-container
+                            position absolute
+                            padding-top 25px
+                            left 0vw
+                            text-align center
+                            transform skew(0deg, 0deg)
                             margin-left 0
-                        h2 
-                            color red
+                        h2
+                            font-family GothamBold
+                            font-size 22px
+                            padding-bottom 15px
+                            color #E51111
                             text-transform uppercase
                             opacity 0
                             transition opacity 0.2s ease-out
                             margin 3px
-                        span 
+                            
+                        span
+                            font-family GothamMedium
                             opacity 0
                             transition opacity 0.2s ease-out
-                            margin 0 3px
                             font-size 14px
                         .more
-                            position absolute
-                            bottom 2vw
-                            margin-left 5vw
+                            font-family GothamLight
+                            position relative
+                            top 6vw
                             font-weight bold
                             font-size 12px
-                    div:hover 
+                    div:hover
+
                         background-color rgba(0, 0, 0, 0.5)
                         transition background-color 0.2s ease-out
                     div:hover span
@@ -60,7 +108,8 @@ html
                         transition opacity 0.5s ease-out
                     &:nth-child(18)
                         div
-                            background-position 15% 86% 
+                            background-position 15% 86%
+
 
 @import 'partials/header.styl'
 @import 'partials/footer.styl'

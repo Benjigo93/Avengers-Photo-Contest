@@ -22,7 +22,7 @@ for($i = 0; $i<count($heroesId); $i++){
 
     //echo '<pre>';
     //print_r($data[2]->biography->{'full-name'});
-    //echo '</pre>';    
+    //echo '</pre>';
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -30,6 +30,8 @@ for($i = 0; $i<count($heroesId); $i++){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../styles/lib/reset.css">
+    <link rel="stylesheet" href="../../../styles/lib/bootstrap.min.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <title>Characters</title>
 </head>
@@ -38,7 +40,14 @@ for($i = 0; $i<count($heroesId); $i++){
         <div class="container">
             <div class="title">
                 <h1>Heroes of Infinity War</h1>
+                <div class="line"></div>
                 <p>(Click on a hero to see his informations)</p>
+                <!-- <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Hulk" name="search">
+                        <button type="submit"><img src="../../../assets/images/search.svg" alt="search"></button>
+                    </form>
+                </div> -->
             </div>
             <?php for($i = 0; $i<count($heroesId); $i++){ ?>
             <a href="hero.php?shId=<?=$heroesId[$i]?>">
