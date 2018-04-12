@@ -2,18 +2,18 @@
 
 $locationError = false;
 
-//Show times location 
+//Show times location
 if(isset($_GET['position'])){
-	
+
 	//International show times api key
 	$apiKey = '19dVVWTqRsDKAI0Ttto29zYsjgIQ3Xog';
-	// Infinity war movie id 
+	// Infinity war movie id
 	$movieId = '30767';
 	// show times language
 	$language = 'fr';
-	// GET location from url 
+	// GET location from url
 	$location = $_GET['position'];
-	//Show times location 
+	//Show times location
 	$distance = '5';
 
 	//Internationnal show times url
@@ -48,21 +48,25 @@ else{
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="../../../styles/main.css">
 		<title>Cinemas</title>
 	</head>
 
 	<body>
-		<?php  
-		if($locationError){
-			echo '<div class="errorMessage">Please accept the geolocation to see the list of cinemas</div>';
-		}
-		else{
-			include '../settings/cinema-list.php';
-		}	
-		?>
-		<header>
+		<header class="header">
 			<button class="cinemas">Liste des cinémas</button>
 		</header>
+		<div class="cinemas-container">
+			<?php
+			if($locationError){
+				echo '<div class="errorMessage">Please accept the geolocation to see the list of cinemas</div>';
+			}
+			else{
+				include '../settings/cinema-list.php';
+			}
+			?>
+		</div>
+
 		<script src="../../../scripts/cinema.js"></script>
 	</body>
 	</html>
