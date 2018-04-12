@@ -14,11 +14,11 @@
         $upReport->bindValue(':report', $report+1);
         $execReport = $upReport->execute();
 
-    header("Location: ../pages/ranking.php");
-
-        echo'<pre>';
-        print_r($get_ranking[$i]->reports);
-        echo'</pre';
+        if(isset($_GET['friendName'])){
+            header("Location: ../pages/ranking.php?".$_GET['friendName']);
+        } else {
+            header("Location: ../pages/ranking.php");
+        }
 
     }
 
