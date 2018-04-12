@@ -22,8 +22,7 @@ for($i = 0; $i<count($heroesId); $i++){
 
     //echo '<pre>';
     //print_r($data[2]->biography->{'full-name'});
-    //echo '</pre>';
-
+    //echo '</pre>';    
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -31,31 +30,19 @@ for($i = 0; $i<count($heroesId); $i++){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../../styles/lib/reset.css">
     <link rel="stylesheet" href="../../../styles/main.css">
     <title>Characters</title>
 </head>
 <body>
     <div id="char-list">
-        <div class="container">
-            <div class="title">
-                <h1>Heroes of Infinity War</h1>
-                <div class="line"></div>
-                <p>(Click on a hero to see his informations)</p>
-            </div>
-            <?php for($i = 0; $i<count($heroesId); $i++){ ?>
-            <a href="hero.php?shId=<?=$heroesId[$i]?>">
-                <div style="background-image:url(../../../assets/images/sheroe<?= $heroesId[$i] ?>.jpg);" class="hero">
-                    <div class="text-container">
-                        <h2> <?= $data[$i]->name ?></h2>
-                        <?php if(!$data[$i]->biography->{'full-name'}==null){?> <span>FULL-NAME : <?= $data[$i]->biography->{'full-name'} ?></span> <?php }?><br/>
-                        <span>RACE : <?= $data[$i]->appearance->race; ?></span><br/>
-                        <span class="more">Click to see more<br/>
-                    </div>
-                </div>
-            </a>
-            <?php }?>
+        <?php for($i = 0; $i<count($heroesId); $i++){ ?>
+        <a href="hero.php?shId=<?=$heroesId[$i]?>">
+        <div style="background-image:url(../../../assets/images/sheroe<?= $heroesId[$i] ?>.jpg);">
+            <h2> <?= $data[$i]->name ?></h2>
+            <?php if(!$data[$i]->biography->{'full-name'}==null){?> <span> <?= $data[$i]->biography->{'full-name'} ?></span> <?php }?>
         </div>
+        </a>
+        <?php }?>
     </div>
 </body>
 </html>
