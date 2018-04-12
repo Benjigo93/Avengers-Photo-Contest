@@ -29,7 +29,7 @@ const gulpUglify       = require('gulp-uglify')
 
 const path =
 {
-	name : 'E05_P2021_H2_T2',
+	name : 'E12_P2021_H2_T2',
 	dist :
 	{
 		root    : './../dist/',
@@ -272,7 +272,7 @@ gulp.task('watch', () =>
 	// Run browser
 	browserSync.init(
 		{
-			browser : 'Google Chrome',
+			browser : 'Chrome',
 			proxy   : `http://localhost/${path.name}/dist`
 		})
 
