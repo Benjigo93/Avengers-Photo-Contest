@@ -30,9 +30,9 @@
                 <?php if(isset($friend_rank)&&$get_ranking[$friend_rank]->validated==1){ ?>
                 <div id="friendBoard">
                 <h4> Your Friend Board </h4>
-                    <span class="rank-number"></span>> <?= $friend_rank ?> </span>
-                    <span class="team-name"></span>> <?= $get_ranking[$friend_rank]->{'team_name'} ?> </span>
-                    <span class="votes"></span>> <?= $get_ranking[$friend_rank]->votes ?> votes </span>
+                    <span class="rank-number"> <?= $friend_rank ?> </span>
+                    <span class="team-name"> <?= $get_ranking[$friend_rank]->{'team_name'} ?> </span>
+                    <span class="votes"> <?= $get_ranking[$friend_rank]->votes ?> votes </span>
                     <a href="../settings/rankProcess.php?friendName=<?= $get_ranking[$friend_rank]->{'team_name'}?>&rankId=<?= $get_ranking[$friend_rank]->id ?>&vote=<?= $get_ranking[$friend_rank]->votes ?>"><span class="add-vote">+1</span></a>
                     <a class="report" href="../settings/reportProcess.php?friendName=<?= $get_ranking[$friend_rank]->{'team_name'}?>&rankId=<?= $get_ranking[$friend_rank]->id ?>&report=<?= $get_ranking[$friend_rank]->reports ?>">report</a>
                     <button type="button" class="shareButton">share</button>
