@@ -13,14 +13,14 @@ const getLocation = () => {
 
 const showPosition = (position) => {
 	let $position = position.coords.latitude + "," + position.coords.longitude;
-	let $url = 'cinemas.php?position=' + $position
+	let $url = 'http://localhost/E12_P2021_H2_T2/final/dist/views/includes/pages/cinemas.php?position=' + $position
 	$url.replace(/\s+/g, '');
 	window.location = $url;
 
 }
 
 const errorPosition = () => {
-	let $url = 'cinemas.php?'
+	let $url = 'http://localhost/E12_P2021_H2_T2/final/dist/views/includes/pages/cinemas.php?'
 	$url.replace(/\s+/g, '');
 	window.location = $url;
 }

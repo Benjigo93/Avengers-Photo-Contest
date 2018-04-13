@@ -10,32 +10,32 @@
 		$validated_bool=$validated_query->fetchAll();
 		if($validated_bool[0]->validated){
 			header('Location: errors/already-validated.php');
-		}
+		}	
 		$query_secure_id = $pdo->prepare("SELECT * FROM rankings WHERE team_id LIKE :team_id");
 		$query_secure_id->bindValue(':team_id',$team_id);
 		$query_secure_id->execute();
-		$secure_id = $query_secure_id->fetchAll();
+		$secure_id = $query_secure_id->fetchAll(); 
 		if(empty($secure_id)){
 			header('Location: errors/404.php');
 		}
 
 
 		$id_hero = $_GET['id_hero'];
-		$query_team = $pdo->query('SELECT R.*, H.name as name_1, H2.name as name_2, H3.name as name_3, H4.name as name_4, H5.name as name_5
+		$query_team = $pdo->query('SELECT R.*, H.name as name_1, H2.name as name_2, H3.name as name_3, H4.name as name_4, H5.name as name_5 
 									FROM rankings R, heroes H, heroes H2, heroes H3, heroes H4, heroes H5
-									WHERE team_id = \''.$team_id.'\'
+									WHERE team_id = \''.$team_id.'\' 
 									AND R.id_hero_1 = H.hero_id
 									AND R.id_hero_2 = H2.hero_id
 									AND R.id_hero_3 = H3.hero_id
 									AND R.id_hero_4 = H4.hero_id
 									AND R.id_hero_5 = H5.hero_id');
-		$team = $query_team->fetchAll();
+		$team = $query_team->fetchAll(); 
 	if(!empty($_POST["submit"])) {
 
 		function clean($string) {
-			$string = str_replace(' ', '-', $string);
+			$string = str_replace(' ', '-', $string); 
 
-			return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+			return preg_replace('/[^A-Za-z0-9\-]/', '', $string); 
 		}
 		$team_directory_name =clean($team[0]->team_name);
 
@@ -104,31 +104,77 @@
 
 	}
 ?>
-
-
+	
+	
 
 
 <!DOCTYPE html>
 
-<html lang="en">
-
+<html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+	<link rel="manifest" href="assets/favicon/site.webmanifest">
+	<link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="assets/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Raleway" rel="stylesheet"> 
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+	<link href="../../../styles/reset.css" rel="stylesheet">
 	<link rel="stylesheet" href="../../../styles/main.css">
-	<title>Upload your photo</title>
+	<title>Registration</title>
 </head>
 <body>
-<img style='height:200px;width:auto' src="<?=$team[0]->{'url_hero_'.$id_hero}; ?>" alt="">
-<form class="form-upload" action="#" method="post" enctype="multipart/form-data">
-    <h2 class="title">Upload your picture</h2>
-	<div class="line"></div>
-    <input class="choose-file" type="file" name="fileToUpload" id="fileToUpload">
-    <input class="form-submit" type="submit" value="Done" name="submit">
-</form>
-
-
+<div class="registration">
+		<div class="header">
+	        <div class="topBar">
+	            <div class="line">
+	                <div class="logo"></div>
+	                <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inscription.php">Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cinemas" href="#">Cinemas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="characters-list.php">Characters</a>
+                        </li>
+                    </ul>
+	            </div>
+	        </div>
+		</div>
+		<img style='height:200px;width:auto' src="<?=$team[0]->{'url_hero_'.$id_hero}; ?>" alt="">
+		<form class="form-upload" action="#" method="post" enctype="multipart/form-data">
+   		 Select image to upload :
+    	<input type="file" name="fileToUpload" id="fileToUpload">
+    	<input type="submit" value="Upload Image" name="submit">
+		</form>
+		<footer>
+        	<div class="left">
+        	    <span> © Copyright - 2018 Avengers Infinity War Contest </span>
+        	    <a href="includes/pages/terms.php">Terms and Conditions</a>
+        	</div>
+        	<div class="right">
+        	    <a href="https://www.facebook.com/avengers/">
+        	        <i class="fab fa-facebook-square"></i>
+        	    </a>
+        	    <a href="https://twitter.com/MarvelStudios">
+        	        <i class="fab fa-twitter-square"></i>
+        	    </a>
+        	</div>
+        </footer>
+    </div>
+    <script src="../../../scripts/cinema.js"></script>
 </body>
 
 </html>
