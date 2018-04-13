@@ -7,18 +7,14 @@ html
         #homepage
             .header
                 background-image: url('../assets/images/avengers-infinity-war.jpg');
-                background-size: 100%;
+                background-size: cover;
                 background-repeat: no-repeat;
             a
                 text-decoration: none       
 
-            ul li
-                display: table-cell
-                vertical-align: middle
-
             .videoPlayerButton
-                margin: 15vw auto
-                width: 20%
+                margin: 13vw auto
+                width: 25%
                 text-align: center    
 
                 .fa-play-circle 
@@ -29,14 +25,12 @@ html
                     opacity: 0.1
                     will-change: transform
 
-            .container 
-                padding: 0 160px
-
             .container.index-1
-                margin-bottom: 50px
+                margin: 0 10vw
 
             .container.index-2
                 background: #2e2e2e
+                padding: 0 10vw
 
             .title
                 font-family: "UniHeavyItalic"
@@ -57,29 +51,34 @@ html
                 display: inline-block
                 font-weight: 100    
                 line-height: 150%
+                margin-right: 9vw
+                p
+                    margin: 2vw 0
 
             .avengersImg
                 width: 25vw
                 height: 25vh
-                margin: 7% auto
+                margin: 3vw auto
                 background-image: url('../assets/images/avengers.png')
                 background-size: cover
                 display: inline-block
     
             .participationButton
-            	background-color:#E23636
-            	border:1px solid #ad2727
-            	display:inline-block
             	cursor:pointer
             	color:#ffffff
-            	font-size:15px
-            	font-weight:bold
-            	padding:9px 23px
-                text-shadow:0px -1px 0px #7a2a1d
-                margin: 5% 0
-            
-            .participationButton:hover
-                background: #ad2727
+            	font-size 1.5vw
+            	font-weight bold 
+            	.participationButton1
+                    background-color #E23636
+                    display:inline-block
+                    padding 1vw 2vw
+                    margin: 5% 0
+                    transition: all 0.5s ease
+                    float right
+
+                a:hover
+                    background-color #ad2727
+
 
 @import 'partials/header.styl'
 @import 'partials/footer.styl'
