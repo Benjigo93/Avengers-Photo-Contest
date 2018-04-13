@@ -38,30 +38,22 @@ for($i = 0; $i<count($heroesId); $i++){
 
 	<body>
 		<div id="inscription-container">
-			<div class="title">
-                <h4>Registration</h4>
-                <div class="line"></div>
-            </div>
 			<form action="#" method="post">
-				<input type="text" name="team_name" placeholder="Team name" class="team-name">
-				<input type="text" name="mail_address" placeholder="Your email" class="email"><br/>
-				<?php foreach($errorMessages as $message): ?>
-					<p style="color: red;">
-						<?= $message ?>
-					</p>
-				<?php endforeach; ?>
-				<div class="title">
-            	    <h4>Characters Selection</h4>
-					<span>Choose up to 5 heroes</span>
-            	    <div class="line"></div>
-            	</div>
-				<div class="selected-hero"></div>
+				<input type="text" name="team_name" placeholder="team name">
+				<input type="text" name="mail_address" placeholder="Your email">
 				<?php foreach($heroesId as $key=>$heroId): ?>
 					<input class='checkbox-limit' style="background-image: url(../../../assets/images/sheroe<?= $heroId ?>.jpg);" data-name='<?= $data[$key]->name ?>' type='checkbox' name='hero_ids[]' value='<?= $heroId ?>' id="<?= $heroId ?>" />
 					<label style="background-image: url(../../../assets/images/sheroe<?= $heroId ?>.jpg)" for="<?= $heroId ?>"></label>
-				<?php endforeach; ?>
-				<input type="submit" value="Sumbit Team" class="submit-team">
+					<?php endforeach; ?>
+						<input type="submit" value="Valider la team">
 			</form>
+
+			<?php foreach($errorMessages as $message): ?>
+				<p style="color: red;">
+					<?= $message ?>
+				</p>
+				<?php endforeach; ?>
+					<div class="selected-hero"></div>
 					<script src="../../../scripts/registration.js"></script>
 			</div>
 		</body>

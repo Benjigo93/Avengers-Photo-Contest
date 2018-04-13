@@ -10,32 +10,32 @@
 		$validated_bool=$validated_query->fetchAll();
 		if($validated_bool[0]->validated){
 			header('Location: errors/already-validated.php');
-		}	
+		}
 		$query_secure_id = $pdo->prepare("SELECT * FROM rankings WHERE team_id LIKE :team_id");
 		$query_secure_id->bindValue(':team_id',$team_id);
 		$query_secure_id->execute();
-		$secure_id = $query_secure_id->fetchAll(); 
+		$secure_id = $query_secure_id->fetchAll();
 		if(empty($secure_id)){
 			header('Location: errors/404.php');
 		}
 
 
 		$id_hero = $_GET['id_hero'];
-		$query_team = $pdo->query('SELECT R.*, H.name as name_1, H2.name as name_2, H3.name as name_3, H4.name as name_4, H5.name as name_5 
+		$query_team = $pdo->query('SELECT R.*, H.name as name_1, H2.name as name_2, H3.name as name_3, H4.name as name_4, H5.name as name_5
 									FROM rankings R, heroes H, heroes H2, heroes H3, heroes H4, heroes H5
-									WHERE team_id = \''.$team_id.'\' 
+									WHERE team_id = \''.$team_id.'\'
 									AND R.id_hero_1 = H.hero_id
 									AND R.id_hero_2 = H2.hero_id
 									AND R.id_hero_3 = H3.hero_id
 									AND R.id_hero_4 = H4.hero_id
 									AND R.id_hero_5 = H5.hero_id');
-		$team = $query_team->fetchAll(); 
+		$team = $query_team->fetchAll();
 	if(!empty($_POST["submit"])) {
 
 		function clean($string) {
-			$string = str_replace(' ', '-', $string); 
+			$string = str_replace(' ', '-', $string);
 
-			return preg_replace('/[^A-Za-z0-9\-]/', '', $string); 
+			return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
 		}
 		$team_directory_name =clean($team[0]->team_name);
 
@@ -104,20 +104,28 @@
 
 	}
 ?>
-	
-	
+
+
 
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../../../styles/main.css">
+	<title>Upload your photo</title>
+</head>
 <body>
 <img style='height:200px;width:auto' src="<?=$team[0]->{'url_hero_'.$id_hero}; ?>" alt="">
-<form action="#" method="post" enctype="multipart/form-data">
-    Select image to upload :
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+<form class="form-upload" action="#" method="post" enctype="multipart/form-data">
+    <h2 class="title">Upload your picture</h2>
+	<div class="line"></div>
+    <input class="choose-file" type="file" name="fileToUpload" id="fileToUpload">
+    <input class="form-submit" type="submit" value="Done" name="submit">
 </form>
 
 
